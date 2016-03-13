@@ -1,0 +1,14 @@
+{
+  "osebe": [
+    {
+      "ime": "kerman",
+      "priimek": "test"
+    },
+    {
+      "ime": "kerman2",
+      "priimek": "test2"
+    }
+  ],
+  "objave": [],
+  "lokacije": []
+}
