@@ -93,7 +93,7 @@ public class javaMain {
             glob.osebe.add(os);
         }
         catch (NullPointerException ex){
-            System.out.println(ex.getMessage() + "");
+            System.out.println(ex.getMessage());
         }
     }
     public static void New_Lokacija(){
