@@ -32,11 +32,6 @@ public class javaMain {
 
     public static void Shrani(Global glob){
         File file = new File(IME_DAT);
-//        try {
-//            file.createNewFile();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         PrintWriter pw = null;
         try
@@ -151,11 +146,9 @@ public class javaMain {
     }
     public static int Search_name(String name){
 
-//        System.out.println(glob.osebe.get(0).getIme());
 
         for(int i = 0; i < glob.osebe.size(); i++){
             if(glob.osebe.get(i).getIme().equals(name)) {
-                //System.out.println("ID: " + i + ", Name: " + glob.osebe.get(i).getIme());
                 return i;
             }
         }

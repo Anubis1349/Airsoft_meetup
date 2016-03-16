@@ -1,17 +1,27 @@
 package com.project.airsoft_meetup;
 
-import android.support.v7.app.ActionBarActivity;
+import android.os.Environment;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
 
 
-public class MainActivity extends ActionBarActivity {
+import data.*;
+
+
+public class MainActivity extends AppCompatActivity {
+
+    Global glob = new Global();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        glob = Util.Naloži();
     }
 
 
@@ -36,4 +46,17 @@ public class MainActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    public void Login_Click(View view){
+        EditText eTxT = (EditText)findViewById(R.id.editText);
+        String usr = eTxT.getText().toString();
+
+        eTxT = (EditText)findViewById(R.id.editText2);
+        String pass = eTxT.getText().toString();
+
+        if(Util.Login(glob, usr, pass))
+            Toast.makeText(this, "Login complete", Toast.LENGTH_SHORT).show();
+        else
+            Toast.makeText(this, "Login failed", Toast.LENGTH_LONG).show();
+   }
 }
